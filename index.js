@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const path = require("path");
 const generateMarkdown = require("./utils/generateMarkdown");
 // TODO: Create an array of questions for user input
 const questions = [
@@ -52,7 +53,7 @@ const questions = [
       "GNU General Public License v2.0",
       "GNU Lesser General Public License v2.1",
       "Mozilla Public License 2.0",
-      "The Unlicense",
+      "none",
     ],
   },
   {
@@ -67,25 +68,31 @@ const questions = [
   },
   {
     type: "input",
-    message: "",
-    name: "question",
+    message: "What is your github profile name?",
+    name: "questions1",
+  },
+  {
+    type: "input",
+    message: "What is your email address?",
+    name: "questions2",
   },
 ];
-function generateReadMe() {}
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile("readMe.md", readMePageContent, (err) =>
-    err ? console.log(err) : console.log("Successfully created readMe.md!")
-  );
+  return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((responses) => {
     console.log(responses);
-    writeToFile("readMe.md", generateMarkdown({ ...responses }));
+    writeToFile("./dist/readMe.md", generateMarkdown({ ...responses }));
   });
 }
 
 // Function call to initialize app
 init();
+
+//return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
+//https://www.markdownguide.org/cheat-sheet/
