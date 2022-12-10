@@ -1,12 +1,12 @@
  
-  # a
+  # Fly Trap
 
-  ![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)
+![GitHub MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 
 ## Description
 
- b
+ teaches people how to swat flys at home
 
 
 ## Table of Contents
@@ -17,48 +17,39 @@
 
 [Usage](#usage)
 
-[License](#license)
+[MIT](#license)
 
 [Contributing](#contributing)
 
 [Tests](#tests)
 
-[Questions](#questions)
-
-[Jumping to](#Questions) 
-
-
+[Questions](#questions) 
 
 
 ## Installation
 
-undefined
+2 clicks
 
 ## Usage
 
-f
+watch the videos and enjoy
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-![alt text](images/e)
+![alt text](/assets/images/house-fly.jpg)
 
 ## License
-
-Apache License 2.0
+    
+    This project is licensed under MIT
 
 ## Contributing
 
-h
+feel free to contribute!
 
 ## Tests 
 
-i
+no test!
 
 ## Questions
 
-- j
-- k
-
-
-
+- danieldwoodward
+- danieldwoodward@gmail.com
 

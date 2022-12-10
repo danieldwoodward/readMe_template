@@ -5,17 +5,36 @@ function renderLicenseBadge(license) {
     license = "";
   }
   else{
-    license = ![GitHub license](https://img.shields.io/badge/license--blue.svg)
+    license = `![GitHub ${license}](https://img.shields.io/badge/license-${license}-blue.svg)`
   }
+  return license;
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if(license === 'none'){
+    return license = "";
+  }
+  else {
+    return `[${license}](#license)`
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if(license === 'none'){
+    return license = "";
+  }
+  else{
+    return `## License
+    
+    This project is licensed under ${license}`
+
+
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = ({
@@ -34,7 +53,7 @@ const generateMarkdown = ({
 ` 
   # ${title}
 
-${license}
+${renderLicenseBadge(license)}
 
 
 ## Description
@@ -50,7 +69,7 @@ ${license}
 
 [Usage](#usage)
 
-[License](#license)
+${renderLicenseLink(license)}
 
 [Contributing](#contributing)
 
@@ -67,13 +86,9 @@ ${installation}
 
 ${usage}
 
-Provide instructions and examples for use. Include screenshots as needed.
+![alt text](/assets/images/${imageUrl})
 
-![alt text](images/${imageUrl})
-
-## License
-
-${license}
+${renderLicenseSection(license)}
 
 ## Contributing
 

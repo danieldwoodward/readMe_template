@@ -17,13 +17,8 @@ const questions = [
   },
   {
     type: "input",
-    message: "List your table of contents",
-    name: "table of contents",
-  },
-  {
-    type: "input",
     message: "Provide a description of how to install this app",
-    name: "install",
+    name: "installation",
   },
   {
     type: "input",
@@ -41,9 +36,9 @@ const questions = [
     message: "What license are you using for this project?",
     name: "license",
     choices: [
-      "Apache License 2.0",
+      "Apache 2.0",
       "GNU General Public License v3.0",
-      "MIT License",
+      "MIT",
       'BSD 2-Clause "Simplified" License',
       'BSD 3-Clause "New" or "Revised" License',
       "Boost Software License 1.0",
@@ -80,6 +75,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+  //this writes a file to a specific location with specific data
   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
